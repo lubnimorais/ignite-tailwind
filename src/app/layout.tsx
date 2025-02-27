@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' className='antialiased'>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className='min-h-screen grid grid-cols-[minmax(18rem,_20rem)_1fr]'>
           <Sidebar />
