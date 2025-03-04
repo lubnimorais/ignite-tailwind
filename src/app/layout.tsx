@@ -32,7 +32,7 @@ export default function RootLayout({
         <div className='min-h-screen grid grid-cols-[minmax(18rem,_20rem)_1fr]'>
           <Sidebar />
 
-          <main className='px-4 pt-8 pb-12'>{children}</main>
+          <main className='px-8 pt-8 pb-12'>{children}</main>
         </div>
       </body>
     </html>
