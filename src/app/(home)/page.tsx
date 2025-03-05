@@ -1,8 +1,10 @@
-import { Mail } from 'lucide-react';
+import { ChevronDown, Mail } from 'lucide-react';
 
 import { InputControl, InputPrefix, InputRoot } from '@/components/Input';
 import { SettingsTabs } from '@/components/SettingsTabs';
 import * as FileInput from '@/components/Form/FileInput';
+import { Select } from '@/components/Form/Select';
+import { SelectItem } from '@/components/Form/Select/SelectItem';
 
 export default function Home() {
   return (
@@ -87,10 +89,7 @@ export default function Home() {
           </div>
 
           <div className='grid grid-cols-[minmax(7.5rem,_17.5rem)_minmax(25rem,_1fr)_minmax(0,_15rem)] gap-3 pb-5'>
-            <label
-              htmlFor='photo'
-              className='font-medium text-sm text-zinc-700'
-            >
+            <label htmlFor='' className='font-medium text-sm text-zinc-700'>
               Your photo
               <span className='font-normal text-sm text-zinc-500 block mt-0.5'>
                 This will be displayed on your profile.
@@ -124,7 +123,10 @@ export default function Home() {
               Country
             </label>
 
-            <div />
+            <Select placeholder='Select a country...'>
+              <SelectItem value='canada' text='Canadá' />
+              <SelectItem value='noruega' text='Noruega' />
+            </Select>
           </div>
 
           <div className='grid grid-cols-[minmax(7.5rem,_17.5rem)_minmax(25rem,_1fr)_minmax(0,_15rem)] gap-3 pb-5'>
@@ -135,7 +137,13 @@ export default function Home() {
               Timezone
             </label>
 
-            <div />
+            <Select placeholder='Select a timezone...'>
+              <SelectItem
+                value='utc8'
+                text='Pacific Standard Time (UTC-08:00)'
+              />
+              <SelectItem value='utc3' text='America São Paulo (UTC-03:00)' />
+            </Select>
           </div>
 
           <div className='grid grid-cols-[minmax(7.5rem,_17.5rem)_minmax(25rem,_1fr)_minmax(0,_15rem)] gap-3 pb-5'>
@@ -163,7 +171,9 @@ export default function Home() {
             <FileInput.Root>
               <FileInput.Trigger />
 
-              <FileInput.Control />
+              <FileInput.FileList />
+
+              <FileInput.Control multiple />
             </FileInput.Root>
           </div>
 

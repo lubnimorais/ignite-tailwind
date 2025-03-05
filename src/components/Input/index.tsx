@@ -13,7 +13,6 @@ export function InputRoot({ ...rest }: IInputRootProps) {
         rounded-lg 
         border 
         border-zinc-300
-        mx-1
         px-3
         py-2
         shadow-sm
