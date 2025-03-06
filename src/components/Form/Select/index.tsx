@@ -4,18 +4,17 @@ import type { ReactNode } from 'react';
 
 import * as SelectPrimitive from '@radix-ui/react-select';
 
-import { Check, ChevronDown } from 'lucide-react';
-import { SelectItem } from './SelectItem';
+import { ChevronDown } from 'lucide-react';
 
-interface ISelectProps {
+interface ISelectProps extends SelectPrimitive.SelectProps {
   children: ReactNode;
   placeholder: string;
 }
 
-export function Select({ children, placeholder }: ISelectProps) {
+export function Select({ children, placeholder, ...rest }: ISelectProps) {
   return (
-    <SelectPrimitive.Root>
-      <SelectPrimitive.Trigger className='w-full h-11 flex items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm data-[placeholder]:text-zinc-600'>
+    <SelectPrimitive.Root {...rest}>
+      <SelectPrimitive.Trigger className='w-full h-11 flex items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm data-[placeholder]:text-zinc-600 outline-none focus:border-violet-300 focus:ring-4 focus:ring-violet-100'>
         <SelectPrimitive.Value
           placeholder={placeholder}
           className='text-black'
@@ -31,7 +30,7 @@ export function Select({ children, placeholder }: ISelectProps) {
           side='bottom'
           position='popper'
           sideOffset={8}
-          className='w-(--radix-select-trigger-width) z-10 rounded-lg border border-zinc-200 bg-white overflow-hidden'
+          className='w-(--radix-select-trigger-width) z-10 rounded-lg border border-zinc-200 bg-white overflow-hidden shadow-sm animate-slideDownAndFade'
         >
           <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
         </SelectPrimitive.Content>

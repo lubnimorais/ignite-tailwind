@@ -1,10 +1,11 @@
-import { ChevronDown, Mail } from 'lucide-react';
+import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react';
 
-import { InputControl, InputPrefix, InputRoot } from '@/components/Input';
+import { InputControl, InputPrefix, InputRoot } from '@/components/Form/Input';
 import { SettingsTabs } from '@/components/SettingsTabs';
 import * as FileInput from '@/components/Form/FileInput';
 import { Select } from '@/components/Form/Select';
 import { SelectItem } from '@/components/Form/Select/SelectItem';
+import { TextArea } from '@/components/Form/TextArea';
 
 export default function Home() {
   return (
@@ -154,7 +155,59 @@ export default function Home() {
               </span>
             </label>
 
-            <div />
+            <div className='space-y-3'>
+              <div className='grid grid-cols-2 gap-3'>
+                <Select placeholder='' defaultValue='normal'>
+                  <SelectItem value='normal' text='Normal Text' />
+                  <SelectItem value='md' text='Markdown' />
+                </Select>
+
+                <div className='flex items-center gap-1'>
+                  <button
+                    type='button'
+                    className='cursor-pointer rounded-md p-2 hover:bg-zinc-50'
+                  >
+                    <Bold className='w-4 h-4 text-zinc-500' strokeWidth={3} />
+                  </button>
+
+                  <button
+                    type='button'
+                    className='cursor-pointer rounded-md p-2 hover:bg-zinc-50'
+                  >
+                    <Italic className='w-4 h-4 text-zinc-500' strokeWidth={3} />
+                  </button>
+
+                  <button
+                    type='button'
+                    className='cursor-pointer rounded-md p-2 hover:bg-zinc-50'
+                  >
+                    <Link className='w-4 h-4 text-zinc-500' strokeWidth={3} />
+                  </button>
+
+                  <button
+                    type='button'
+                    className='cursor-pointer rounded-md p-2 hover:bg-zinc-50'
+                  >
+                    <List className='w-4 h-4 text-zinc-500' strokeWidth={3} />
+                  </button>
+
+                  <button
+                    type='button'
+                    className='cursor-pointer rounded-md p-2 hover:bg-zinc-50'
+                  >
+                    <ListOrdered
+                      className='w-4 h-4 text-zinc-500'
+                      strokeWidth={3}
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <TextArea
+                id='bio'
+                defaultValue="I'm a Product Designer based in Melbourne, Australia. I specialise in UX/UI design, brand strategy, and Webflow development."
+              />
+            </div>
           </div>
 
           <div className='grid grid-cols-[minmax(7.5rem,_17.5rem)_minmax(25rem,_1fr)_minmax(0,_15rem)] gap-3 pb-5'>
