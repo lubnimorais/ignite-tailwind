@@ -6,6 +6,7 @@ import * as FileInput from '@/components/Form/FileInput';
 import { Select } from '@/components/Form/Select';
 import { SelectItem } from '@/components/Form/Select/SelectItem';
 import { TextArea } from '@/components/Form/TextArea';
+import { Button } from '@/components/Form/Button';
 
 export default function Home() {
   return (
@@ -25,21 +26,22 @@ export default function Home() {
           </div>
 
           <div className='flex items-center gap-2'>
-            <button
-              type='button'
-              className='font-semibold text-sm text-zinc-700 rounded-lg px-4 py-2 shadow-sm border border-zinc-300 hover:bg-zinc-50'
-            >
+            <Button variant='outline' type='button'>
               Cancel
-            </button>
+            </Button>
 
             {/* O BOTÃO DE SUBMIT ESTÁ RELACIONADO AO FORM ABAIXO */}
-            <button
+            <Button variant='primary' type='submit' form='settings'>
+              Save
+            </Button>
+
+            {/* <button
               className='font-semibold text-sm text-white rounded-lg px-4 py-2 shadow-sm bg-violet-600 hover:bg-violet-700'
               type='submit'
               form='settings'
             >
               Save
-            </button>
+            </button> */}
           </div>
         </div>
 
@@ -231,19 +233,13 @@ export default function Home() {
           </div>
 
           <div className='flex items-center justify-end gap-2'>
-            <button
-              type='button'
-              className='font-semibold text-sm text-zinc-700 rounded-lg px-4 py-2 shadow-sm border border-zinc-300 hover:bg-zinc-50'
-            >
+            <Button variant='outline' type='button'>
               Cancel
-            </button>
+            </Button>
 
-            <button
-              className='font-semibold text-sm text-white rounded-lg px-4 py-2 shadow-sm bg-violet-600 hover:bg-violet-700'
-              type='submit'
-            >
+            <Button variant='primary' type='submit'>
               Save
-            </button>
+            </Button>
           </div>
         </form>
       </div>
