@@ -29,10 +29,17 @@ export default function RootLayout({
   return (
     <html lang='en' className='antialiased'>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className='min-h-screen grid grid-cols-[minmax(18rem,_20rem)_1fr]'>
+        <div className='min-h-screen lg:grid lg:grid-cols-[minmax(18rem,_20rem)_1fr] dark:bg-zinc-900'>
           <Sidebar />
 
-          <main className='px-8 pt-8 pb-12'>{children}</main>
+          {/**
+           * COMO A SIDEBAR ESTÁ FIXA, ELA ACABA NÃO CONTANTO PARA O GRID
+           * E COM O COL-START-2 ESTAMOS DIZENDO QUE O MAIN EM TELA MAIOR
+           * VAI OCUPAR A SEGUNDA COLUNA DO GRID
+           */}
+          <main className='max-w-[100vw] px-4 pb-12 pt-24 lg:col-start-2 lg:px-8 lg:pt-8 lg:pb-12'>
+            {children}
+          </main>
         </div>
       </body>
     </html>
